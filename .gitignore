@@ -12,9 +12,6 @@ uploads/
 # C extensions
 *.so
 
-notebooks/
-assets/
-temp.py
 # Distribution / packaging
 .Python
 build/

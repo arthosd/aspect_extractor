@@ -30,10 +30,15 @@ After installing dependencies, you'll need to downlaod Spacy language model (eng
 pip3 install -U pip setuptools wheel
 python3 -m spacy download en_core_web_sm
 ```
+### 4. Create uploads directory
+Create a directory called ***uploads***.
+```bash
+mkdir uploads
+```
 ## Starting project
 While environment running, go to the root of the project and type the following command :
 ```bash
 python3 app.py
 ```
 The flask server should start-up.
-When the server is up and running, click [here](http://localhost:8000/)
+When the server is up and running, click [here](http://localhost:8000/) or type localhost:8000 in a web browser.
