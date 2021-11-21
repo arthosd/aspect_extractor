@@ -38,7 +38,7 @@ class Parser :
             for word in result :
                 temp_list.append(self.__doc[word])
 
-            obj["aspect"] = temp_list
+            obj["aspect"] = str(temp_list)
             self.__result.append(obj)
 
     def get_result (self) :

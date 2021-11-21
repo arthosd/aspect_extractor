@@ -27,8 +27,6 @@ class Handler :
             parser.match()
             self.__parsers.append(parser)
 
-        print ("----------------------------- FINISSSSSS --------------------------------")
-
     def export_all_aspect (self) :
         """
         get all the result of all parser and export it to json file
@@ -38,8 +36,8 @@ class Handler :
         for parser in self.__parsers :
             final_result.append(parser.get_result())
 
-        json_format = json.dumps(final_result)
+        son_format = json.dumps(final_result)
         
         with open(self.__file_path+".result.json","w") as file:
-            file.write(json_format)
+            file.write(son_format)
         

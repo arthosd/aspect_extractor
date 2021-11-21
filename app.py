@@ -29,7 +29,7 @@ def file_uploads ():
         file.save(os.path.join(app.config['UPLOADED_PATH'],file.filename))
         handler = Handler(os.path.join(app.config['UPLOADED_PATH'],file.filename))
         handler.extract_aspect_from_reviews ()
-        # handler.export_all_aspect()
+        handler.export_all_aspect()
 
     return render_template("/main.html")
 
