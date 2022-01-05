@@ -5,13 +5,25 @@ import json
 
 class Handler :
 
-    def __init__(self, file_path) :
+    def __init__(self, file_path=None) :
         # File name
         self.__file_path = file_path
         # Read json file containing filepath
-        self._reviews_df = pd.read_json(file_path, lines=True)
+        self._reviews_df = pd.read_json(file_path, lines=True) if file_path is not None else None
         # Will contain result of each parser
         self.__parsers = []
+
+    def extract_aspect_from_text (self, text) :
+        """
+        Extrat aspect from sentence
+
+        return aspect
+        """
+
+        parser = Parser(text)
+        parser.match()        
+
+        return parser.get_result()
 
     def extract_aspect_from_reviews (self) :
         """

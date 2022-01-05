@@ -18,7 +18,24 @@ app.config['DROPZONE_ALLOWED_FILE_TYPE'] = '.json'
 
 dropzone = Dropzone(app)
 
+
 @app.route("/", methods=["POST", "GET"])
+def input ():
+
+    if request.method == 'POST':
+        # If it's POST
+
+        handler = Handler(file_path=None)
+        to_send = handler.extract_aspect_from_text(request.json["message"])
+        return {
+            "data" : to_send,
+            "status": 200
+        }
+    else :
+        # If it GETS
+        return render_template("/sentence.html")
+
+@app.route("/upload", methods=["POST", "GET"])
 def file_uploads ():
 
     if request.method == 'POST':
